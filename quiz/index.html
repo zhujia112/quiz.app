@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>软考做题小程序</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app">
+
+  <!-- 首页 -->
+  <section id="home" class="screen active">
+    <div class="topbar">
+      <div class="brand"><span class="dot"></span> 软考刷题</div>
+      <div class="sub" id="srcName">做题小程序</div>
+    </div>
+
+    <div class="stat">
+      <div class="box"><b id="stTotal">0</b><span>总题数</span></div>
+      <div class="box"><b id="stDone">0</b><span>已练习</span></div>
+      <div class="box"><b id="stWrong">0</b><span>错题库</span></div>
+      <div class="box"><b id="stFav">0</b><span>收藏</span></div>
+    </div>
+
+    <div class="row" style="margin-bottom:6px">
+      <button class="btn primary" id="allSeq" style="flex:1">全部顺序</button>
+      <button class="btn" id="allRand" style="flex:1">全部随机</button>
+    </div>
+    <div class="row">
+      <button class="btn ghost" id="openWrong" style="flex:1">📕 错题库</button>
+      <button class="btn ghost" id="openFav" style="flex:1">⭐ 收藏夹</button>
+    </div>
+
+    <div class="hr"></div>
+    <div class="sub" style="margin-bottom:2px">选择章节开始练习</div>
+    <div class="grid" id="chapterGrid"></div>
+  </section>
+
+  <!-- 章节详情 -->
+  <section id="chapter" class="screen">
+    <div class="topbar">
+      <button class="btn ghost sm" id="chBack">← 返回</button>
+    </div>
+    <div class="card">
+      <div class="brand" id="chTitle" style="font-size:17px"></div>
+      <div class="sub" id="chInfo" style="margin:6px 0 10px"></div>
+      <div id="chBtns"></div>
+    </div>
+  </section>
+
+  <!-- 做题 -->
+  <section id="practice" class="screen">
+    <div class="topbar">
+      <button class="btn ghost sm" id="exitBtn">← 退出</button>
+      <div class="sub" id="ptitle"></div>
+      <div class="sub" id="pcount"></div>
+    </div>
+    <div class="progress" id="pbar"><i></i></div>
+    <div id="qcard"></div>
+  </section>
+
+  <!-- 列表（错题库/收藏夹）-->
+  <section id="list" class="screen">
+    <div class="topbar">
+      <button class="btn ghost sm" id="listBack">← 返回</button>
+      <div class="brand" id="listTitle" style="font-size:17px"></div>
+    </div>
+    <button class="btn primary" id="listStart" style="width:100%;margin-bottom:12px"></button>
+    <div id="listItems"></div>
+  </section>
+
+  <!-- 做题底部导航 -->
+  <div class="footbar" id="footbar" style="display:none">
+    <button class="btn ghost" id="prevBtn">← 上一题</button>
+    <button class="btn primary" id="nextBtn">下一题 →</button>
+  </div>
+  <div class="toast" id="toast"></div>
+</div>
+
+<script src="bank.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
